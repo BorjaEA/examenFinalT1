@@ -52,6 +52,8 @@ p {
     transition: all 1.5s ease;
     -webkit-transition: all 1.5s ease;
     background-color: transparent;
+    -webkit-animation: glow 1.5s ease-in-out infinite alternate;
+    animation: glow 1.5s ease-in-out infinite alternate;
     z-index: 2;
 }
 
@@ -64,13 +66,21 @@ p:nth-child(1) {
 div:active, div:hover {
     opacity: 1;
 
-    background-image: radial-gradient(rgb(255,255,200,0.1), rgb(255,255,200,0.25), rgb(255,255,200,0.4));
+    background-image: radial-gradient(rgb(255,255,200,0.1), rgb(255,255,200,0.15), rgb(255,255,200,0.4));
 
     /*background-image: radial-gradient(rgb(255, 255, 255, 0.1) 65%, rgb(255, 255, 255, 0.15) 15%);*/
 
     /*background-color:rgba(255,255,255,0.15);*/
 
 
+}
+@-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #e60073, 0 0 8px #e60073, 0 0 10px #e60073, 0 0 12px #e60073, 0 0 14px #e60073;
+    }
+    to {
+      text-shadow: 0 0 4px #fff, 0 0 6px #ff4da6, 0 0 8px #ff4da6, 0 0 10px #ff4da6, 0 0 12px #ff4da6, 0 0 14px #ff4da6, 0 0 16px #ff4da6;
+    }
 }
 
 @media all and (orientation:landscape) {
